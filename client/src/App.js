@@ -5,6 +5,7 @@ import Home from './Home.js';
 import Login from './Login.js';
 import Register from './Register.js';
 import Success from './Success.js';
+import Loading from './Loading.js';
 import UserProfile from './UserProfile';
 import { Switch, Route } from 'react-router-dom';
 import ReportAPet from './ReportAPet.js';
@@ -82,7 +83,7 @@ class App extends Component {
     .then(res => {
       setTimeout(() => { this.setState({
         loading:false,
-      })}, 3000)
+      })}, 300)
     })
     .catch(error => console.log(error));
   }
@@ -117,74 +118,7 @@ updateNavState = name => {
   render() {
 
     if (this.state.loading) {
-      return (
-    <React.Fragment>
-<div className="paw-print-1">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-2">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-3">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-4">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-5">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-6">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-7">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-<div className="paw-print-8">
-    <div className="pad large"></div>
-    <div className="pad small-1"></div>
-    <div className="pad small-2"></div>
-    <div className="pad small-3"></div>
-    <div className="pad small-4"></div>
-</div>
-
-    </React.Fragment>
-    )
+      return <Loading/>
     } else {
     return (
       <React.Fragment>

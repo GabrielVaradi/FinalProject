@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Badges from './Badges'
 import './App.scss';
 import { ProgressBar, Card, Button, Form, Alert, Badge, Image, Col } from 'react-bootstrap';
 import Switch from "react-switch";
