@@ -23,6 +23,7 @@ const Levels = ({user, points, current_user, current_user_id, id}) => {
     height: "192px"
   }
 
+
     const levels = Math.floor(user.points/1000)
     const progress = (user.points - levels*1000)
     const missingPoints = Math.floor(1000 - progress)

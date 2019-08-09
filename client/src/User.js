@@ -113,6 +113,8 @@ class User extends Component {
       }
 
 
+
+
   render() {
 
     if (this.state.redirect) {
@@ -127,7 +129,7 @@ class User extends Component {
           <Alert variant="danger" key={error}>Error: {error}</Alert>
         ))}
 
-        <Levels user={this.props.user} points={this.state.points} current_user={this.props.current_user} current_user_id={this.state.current_user_id} id={this.state.id} />
+        <Levels setCurrentBadge={this.setCurrentBadge} user={this.props.user} points={this.state.points} current_user={this.props.current_user} current_user_id={this.state.current_user_id} id={this.state.id} />
 
       {this.props.current_user && this.state.current_user_id === this.state.id &&
         <div className="userProfile">
