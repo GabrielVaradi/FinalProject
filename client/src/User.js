@@ -270,7 +270,7 @@ class User extends Component {
             </Card.Body>
           </Card>
           <div className="Pets">
-            {this.props.pets.map(pet =>
+            {this.state.userPet.map(pet =>
               <section key={pet.id}>
 
                 <article onClick={event => this.handlePetSubmit(pet.id)} className="petcard">
@@ -314,8 +314,9 @@ class User extends Component {
             </Card.Body>
 
           </Card>
+          
           <div className="Pets">
-            {this.props.pets.map(pet =>
+            {this.state.userPet.map(pet =>
               <section key={pet.id}>
 
                 <article onClick={event => this.handlePetSubmit(pet.id)} className="petcard">

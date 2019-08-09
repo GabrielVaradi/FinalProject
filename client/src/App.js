@@ -84,6 +84,7 @@ class App extends Component {
       setTimeout(() => { this.setState({
         loading:false,
       })}, 300)
+
     })
     .catch(error => console.log(error));
   }
