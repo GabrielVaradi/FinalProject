@@ -1,8 +1,8 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
-import styled from "styled-components";
-import { LinkContainer } from "react-router-bootstrap";
-import { Redirect } from "react-router-dom";
+// import { Nav, Navbar } from "react-bootstrap";
+// import styled from "styled-components";
+// import { LinkContainer } from "react-router-bootstrap";
+// import { Redirect } from "react-router-dom";
 
 const Footer = () => {
 
