@@ -1,13 +1,15 @@
 import React from 'react';
 import { Col, Card, Form, Button} from 'react-bootstrap';
 import TimeAgo from 'react-timeago';
+import Switch from "react-switch";
 
 //Displays the nav-bar
-const UserInfo = ({ current_user, current_user_id, id, email, phone_number, handleChange, handleSwitchChange, checked, handleSubmit, user }) => {
+const UserInfo = ({ current_user, current_user_id, id, email, phone_number, handleChange, handleSwitchChange, checked, handleSubmit, user, userPet, handlePetSubmit }) => {
 
-// <UserInfo current_user={this.props.current_user} current_user_id={this.state.current_user_id} id={this.state.id} email={this.state.email} name={this.state.name} phone_number={this.state.phone_number} handleChange={this.handleChange} handleSwitchChange={this.handleSwitchChange} handleSubmit={this.handleSubmit} hecked={this.state.checked} user={this.props.user} userPet={this.state.userPet} handlePetSubmit={this.handlePetSubmit}/>
+// <UserInfo current_user={this.props.current_user} current_user_id={this.state.current_user_id} id={this.state.id} email={this.state.email} name={this.state.name} phone_number={this.state.phone_number} handleChange={this.handleChange} handleSwitchChange={this.handleSwitchChange} handleSubmit={this.handleSubmit} checked={this.state.checked} user={this.props.user} userPet={this.state.userPet} handlePetSubmit={this.handlePetSubmit}/>
 
     return (
+      <React.Fragment>
       {current_user && current_user_id === id &&
         <div className="userProfile">
             <Card className="userInfo">
@@ -22,7 +24,7 @@ const UserInfo = ({ current_user, current_user_id, id, email, phone_number, hand
                   className="register-control"
                   type="name"
                   name="name"
-                  value={name}
+                  value={email}
                   onChange={handleChange}
                 />
               </Form.Group>
@@ -82,7 +84,7 @@ const UserInfo = ({ current_user, current_user_id, id, email, phone_number, hand
             <Card.Body className="userCardBody">
 
               <Card.Text className="userCardText">
-              <div>Name: {this.state.name} <br/> Email: {email} <br/> Phone Number: {phone_number} </div>
+              <div>Name: {user.name} <br/> Email: {email} <br/> Phone Number: {phone_number} </div>
               </Card.Text>
             </Card.Body>
 
@@ -114,6 +116,7 @@ const UserInfo = ({ current_user, current_user_id, id, email, phone_number, hand
           )}
           </div>
           </div>}
+          </React.Fragment>
 
 
     );

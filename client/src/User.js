@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Levels from './Levels.js'
+import UserInfo from './UserInfo.js'
 import './App.scss';
 import { ProgressBar, Card, Button, Form, Alert, Badge, Image, Col } from 'react-bootstrap';
 import Switch from "react-switch";
@@ -130,117 +131,9 @@ class User extends Component {
         ))}
 
         <Levels setCurrentBadge={this.setCurrentBadge} user={this.props.user} points={this.state.points} current_user={this.props.current_user} current_user_id={this.state.current_user_id} id={this.state.id} />
+        <UserInfo current_user={this.props.current_user} current_user_id={this.state.current_user_id} id={this.state.id} email={this.state.email} name={this.state.name} phone_number={this.state.phone_number} handleChange={this.handleChange} handleSwitchChange={this.handleSwitchChange} handleSubmit={this.handleSubmit} checked={this.state.checked} user={this.props.user} userPet={this.state.userPet} handlePetSubmit={this.handlePetSubmit}/>
 
-      {this.props.current_user && this.state.current_user_id === this.state.id &&
-        <div className="userProfile">
-            <Card className="userInfo">
-            <Card.Body className="userCardBody2">
-
-            <Form>
-            <div className="email-user">Email: {this.state.email}</div>
-            <hr/>
-              <Form.Group controlId="formGridName">
-                <Form.Label/>
-                <Form.Control
-                  className="register-control"
-                  type="name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                />
-              </Form.Group>
-
-              <Form.Group controlId="formGridPhoneNumber">
-                <Form.Label/>
-                <Form.Control
-                  className="register-control"
-                  type="phone_number"
-                  name="phone_number"
-                  value={this.state.phone_number}
-                  onChange={this.handleChange}
-                />
-
-              </Form.Group>
-
-              <div className="alerts" >Alerts : &nbsp;&nbsp;{user.alerts}<Switch onChange={this.handleSwitchChange} checked={this.state.checked}/> </div>
-              <Button className="alert-button" onClick={this.handleSubmit} variant="success"> Update Profile </Button>
-              </Form>
-            </Card.Body>
-          </Card>
-          <div className="Pets">
-            {this.state.userPet.map(pet =>
-              <section key={pet.id}>
-
-                <article onClick={event => this.handlePetSubmit(pet.id)} className="petcard">
-
-                  <div className="image">
-                    <img key={pet.id} src={pet.picture} alt=""/>
-                  </div>
-
-                    <div className="fixcontainer">
-
-                      <div className="fixtext">
-                        <h1 className={`fixcard-title ${pet.status}`}>{pet.status} {pet.species}</h1>
-                        <p className="fixmeta"> {pet.status} <TimeAgo date={pet.date_lost}/></p>
-                        <p className="fix">Name: {pet.name}</p>
-                        <p>Colour: {pet.description.colour}</p>
-                      </div>
-
-                    </div>
-
-                  </article>
-                </section>
-          )}
-          </div>
-          </div>
-          }
-
-
-          {this.state.current_user_id !== this.state.id &&
-            <div className="userProfile">
-
-
-            <Card className="userInfo">
-
-            <Card.Body className="userCardBody">
-
-              <Card.Text className="userCardText">
-              <div>Name: {this.state.name} <br/> Email: {this.state.email} <br/> Phone Number: {this.state.phone_number} </div>
-              </Card.Text>
-            </Card.Body>
-
-          </Card>
-
-          <div className="Pets">
-            {this.state.userPet.map(pet =>
-              <section key={pet.id}>
-
-                <article onClick={event => this.handlePetSubmit(pet.id)} className="petcard">
-
-                  <div className="image">
-                    <img key={pet.id} src={pet.picture} alt=""/>
-                  </div>
-
-                    <div className="fixcontainer">
-
-                      <div className="fixtext">
-                        <h1 className={`fixcard-title ${pet.status}`}>{pet.status} {pet.species}</h1>
-                        <p className="fixmeta"> {pet.status} <TimeAgo date={pet.date_lost}/></p>
-                        <p className="fix">Name: {pet.name}</p>
-                        <p>Colour: {pet.description.colour}</p>
-                      </div>
-
-                    </div>
-
-                  </article>
-                </section>
-          )}
-          </div>
-          </div>}
-
-
-
-
+}
 
 
 
