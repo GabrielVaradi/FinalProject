@@ -109,12 +109,13 @@ const Levels = ({user, points, current_user, current_user_id, id}) => {
                     <ProgressBar className="progressBar" label={`${percentage}%`} variant="success" animated now={percentage} />
 </React.Fragment>
 
-<Col className="userPicture" xs={0} md={0}>
-      {currentBadge}
-    </Col>
+
     </React.Fragment>
 
     );
 };
 export default Levels;
 
+// <Col className="userBadge" xs={0} md={0}>
+//       {currentBadge}
+//     </Col>
