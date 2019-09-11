@@ -1,9 +1,7 @@
 import React, { Component } from "react";
+import Markers from './Markers.js'
 import { withGoogleMap, withScriptjs, GoogleMap, Marker, InfoWindow, Circle } from "react-google-maps";
 import { Form, Col } from 'react-bootstrap';
-
-
-
 
 
 class Map extends Component {
@@ -80,47 +78,12 @@ class Map extends Component {
      }
     return (
 
-    <Marker
-      setMarkerRef={this.setMarkerRef}
-      key={pet.id}
-      position = {{lat: Number(pet.latitude), lng: Number(pet.longitude)}}
-      name = {pet.name}
-      onClick={() => this.onMarkerClick(pet.id)}
-      options={{ icon:
-                { url: pet.picture_merged,
-                  scaledSize: { width: 48, height: 48 },
-                  } }}
-
-       >
-        {this.state.markerId === pet.id && <InfoWindow >
-
-        <img key={pet.id} alt={`pet {pet.id}`} src={pet.picture}/>
-        </InfoWindow>}
-
-
-
-
-        {this.state.circleVisible === pet.id && <Circle
-          options={{
-            visible: this.state.circleVisible,
-            radius: radius,
-            fillColor:'#84bcaf',
-            strokeOpacity: 0,
-            fillOpacity: 0.4,
-            center: {lat: Number(pet.latitude),
-                            lng: Number(pet.longitude)}
-          }
-          }
-           />}
-         </Marker>
+    <Markers radius={radius} name={pet.name} setMarkerRef={this.setMarkerRef} id={pet.id} latitude={pet.latitude} longitude={pet.longitude} picture_merged={pet.picture_merged} markerId={this.state.markerId} picture={pet.picture} circleVisible={this.state.circleVisible}/>
          )
   })
 }
 
 componentDidMount() {
-
-
-
 }
 
   render() {
