@@ -3,12 +3,12 @@ import Markers from './Markers.js'
 import { withGoogleMap, withScriptjs, GoogleMap, Marker, InfoWindow, Circle } from "react-google-maps";
 import { Form, Col } from 'react-bootstrap';
 
-
 class Map extends Component {
   constructor(props) {
     super(props);
     this.map = React.createRef();
     this.marker = React.createRef();
+
   }
 
   state = {
@@ -23,6 +23,7 @@ class Map extends Component {
     time: 'All time',
 
   }
+
 
   setMapRef = (map) => {
     this.map = map
@@ -93,6 +94,7 @@ componentDidMount() {
   const threedays = time - (86400000*3)
   const fivedays = time - (86400000*5)
   const week = time - (86400000*7)
+
 
 
 return (
@@ -193,19 +195,13 @@ return (
             this.props.updatePetsOnMap(petOnMapArray)
 
           }}
-
-
-
 >
 {this.renderMarkers()}
 
 </MyMapComponent>
 </React.Fragment>
 )
-
-
   }
-
 }
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
